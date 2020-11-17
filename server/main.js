@@ -2,7 +2,7 @@ const https = require("https");
 const fetch = require("node-fetch");
 
 const hostname = "127.0.0.1";
-const port = 443;
+const port = 3000;
 
 const server = https.createServer(async (req, res) => {
   // Set CORS headers
