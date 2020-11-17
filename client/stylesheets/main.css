@@ -1,0 +1,132 @@
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  width: 100%;
+  height: 100vh;
+}
+
+.container {
+  position: relative;
+  width: 100%;
+  min-height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  background: -webkit-gradient(linear, left top, right top, from(#8e2de2), to(#4a00e0));
+  background: linear-gradient(to right, #8e2de2, #4a00e0);
+  padding: 30px;
+}
+
+.container .container-images {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (minmax(400px, 1fr))[auto-fill];
+      grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+  grid-gap: 10px;
+}
+
+.container .container-images .image {
+  width: 400px;
+  height: 400px;
+}
+
+.container .container-images .image:hover {
+  -webkit-filter: brightness(0.6);
+          filter: brightness(0.6);
+}
+
+.container .container-images .placeholder {
+  background-color: gray;
+  position: relative;
+}
+
+.container .container-images .placeholder:after {
+  content: "Loading...";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.container .content {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.container__link {
+  font-family: Arial, Helvetica, sans-serif;
+  color: white;
+  text-align: center;
+  font-size: 1.3rem;
+  font-weight: bold;
+}
+
+.container h3 {
+  position: absolute;
+  font-family: Arial, Helvetica, sans-serif;
+  color: white;
+  text-align: center;
+  font-weight: bold;
+  bottom: 10px;
+  right: 10px;
+}
+
+.container__btn {
+  display: block;
+  width: 140px;
+  height: 50px;
+  margin-top: 20px;
+  text-align: center;
+  border: 2px solid white;
+  border-radius: 5px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  font-size: 1rem;
+  color: white;
+  background: transparent;
+  cursor: pointer;
+  -webkit-transition: all .7s ease;
+  transition: all .7s ease;
+}
+
+.container__btn:hover {
+  background: white;
+  border: 2px solid white;
+  color: black;
+}
+
+.container__btn:focus {
+  outline: none;
+}
+/*# sourceMappingURL=main.css.map */
