@@ -1,33 +1,29 @@
-const https = require("https");
 const fetch = require("node-fetch");
+const express = require('express')
+const cors = require("cors");
+const app = express();
 
-const hostname =  "0.0.0.0";
+app.use(cors());
+
 const port = process.env.PORT || 3000;
+ 
+app.get('/:link', async (req, res) => {
+  console.log("request received");
 
-const server = https.createServer(async (req, res) => {
-  console.log("request recieved")
-  // Set CORS headers
-	res.setHeader('Access-Control-Allow-Origin', 'https://prntscgenerator.ml');
-	res.setHeader('Access-Control-Request-Method', '*');
-	res.setHeader('Access-Control-Allow-Methods', 'OPTIONS, GET');
-	res.setHeader('Access-Control-Allow-Headers', req.headers.origin);
-
-  res.statusCode = 200;
-
-  const imageURL = req.url.substring(1, req.url.length);
+  const imageURL = req.params.link;
   let response;
 
   if (imageURL.includes(".png")) {
-    res.setHeader("Content-Type", "image/png");
-    response = await (await fetch(imageURL)).buffer()
+    res.type("png");
+    response = await (await fetch(imageURL)).buffer();
   } else {
-    res.setHeader("Content-Type", "text/html");
+    res.type("png");
     response = await (await fetch(imageURL)).text();
   }
 
-  res.end(response);
-});
-
-server.listen(port, hostname, () => {
-  console.log(`Server running at https://${hostname}:${port}/`);
-});
+  res.send(response);
+})
+ 
+app.listen(port, () => {
+  console.log("Server listening on port " + port);
+})
