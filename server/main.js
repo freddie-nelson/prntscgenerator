@@ -1,11 +1,11 @@
-const http = require("http");
+const http = require("https");
 const fetch = require("node-fetch");
 const datauri = require("datauri");
 
 const hostname = "127.0.0.1";
-const port = 3000;
+const port = 443;
 
-const server = http.createServer(async (req, res) => {
+const server = https.createServer(async (req, res) => {
   // Set CORS headers
 	res.setHeader('Access-Control-Allow-Origin', '*');
 	res.setHeader('Access-Control-Request-Method', '*');
@@ -29,5 +29,5 @@ const server = http.createServer(async (req, res) => {
 });
 
 server.listen(port, hostname, () => {
-  console.log(`Server running at http://${hostname}:${port}/`);
+  console.log(`Server running at https://${hostname}:${port}/`);
 });
