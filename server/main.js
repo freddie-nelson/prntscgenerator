@@ -7,10 +7,10 @@ app.use(cors());
 
 const port = process.env.PORT || 3000;
  
-app.get('/:link', async (req, res) => {
+app.get('/', async (req, res) => {
   console.log("request received");
 
-  const imageURL = req.params.link;
+  const imageURL = req.query.link;
   let response;
 
   if (imageURL.includes(".png")) {
