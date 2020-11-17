@@ -5,6 +5,7 @@ const hostname =  "0.0.0.0";
 const port = process.env.PORT || 3000;
 
 const server = https.createServer(async (req, res) => {
+  console.log("request recieved")
   // Set CORS headers
 	res.setHeader('Access-Control-Allow-Origin', 'https://prntscgenerator.ml');
 	res.setHeader('Access-Control-Request-Method', '*');
