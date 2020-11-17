@@ -1,5 +1,5 @@
 const images = document.getElementById("images")
-const corsLink = "http://1prntscgenerator.herokuapp.com/3000/";
+const corsLink = "https://prntscgenerator.herokuapp.com/3000/";
 const count = 30
 
 function generateAll() {
