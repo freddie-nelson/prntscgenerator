@@ -1,6 +1,5 @@
-const http = require("https");
+const https = require("https");
 const fetch = require("node-fetch");
-const datauri = require("datauri");
 
 const hostname = "127.0.0.1";
 const port = 443;
